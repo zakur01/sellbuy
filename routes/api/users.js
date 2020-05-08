@@ -12,11 +12,11 @@ const User = require("../../models/User");
 router.post(
   "/",
   [
-    check("name", "Name is required").not().isEmpty(),
-    check("email", "Please include a valid email").isEmail(),
+    check("name", "Требуется имя пользователя").not().isEmpty(),
+    check("email", "Требуется почтовый адрес").isEmail(),
     check(
       "password",
-      "Please enter a password with six or more characters"
+      "Введите пароль из минимум шести символов"
     ).isLength({ min: 6 }),
   ],
   async (req, res) => {
@@ -59,7 +59,7 @@ router.post(
         }
       };
 
-      jwt.sign(payload, config.get('jwtSecret'), { expiresIn: 36000 }, (err, token) => {
+      jwt.sign(payload, config.get('jwtSecret'), { expiresIn: 3600000 }, (err, token) => {
         if (err) throw err;
         res.json({ token })
       });

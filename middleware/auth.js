@@ -7,10 +7,11 @@ module.exports = function (req, res, next) {
     return res.status(401).json({ msg: "Отсутствует токен" });
   }
 
-  try {
-    const decoded = jwt.verify(token, config.get("jwtSecret"));
-      req.user = decoded.user;
-      next()
-  } catch (err) {}
-    res.status(401).json({ msg: 'неправильный токен'})
+    try {
+        const decoded = jwt.verify(token, config.get("jwtSecret"));
+        req.user = decoded.user;
+        next()
+    } catch (err) {
+        res.status(401).json({ msg: 'неправильный токен' })
+    }
 };
