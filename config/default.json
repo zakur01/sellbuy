@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://zakur0vich:Sadssads6661361@cluster0-lbov7.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://zakur0vich:Sadssads6661361@cluster0-lbov7.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "zakur0"
 }
