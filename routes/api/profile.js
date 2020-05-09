@@ -75,8 +75,24 @@ router.post(
 router.delete("/", auth, async (req, res) => {
   try {
     await Profile.findOneAndDelete({ user: req.user.id });
-      await User.findOneAndDelete({ _id: req.user.id });
-    res.json({ msg: "пользователь удалён"})
+    await User.findOneAndDelete({ _id: req.user.id });
+    res.json({ msg: "пользователь удалён" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("ошибка сервера");
+  }
+});
+
+//доступ к профилю через id
+router.get("/user/:user_id", async (req, res) => {
+  try {
+    const profile = await Profile.findOne({
+      user: req.params.user_id,
+    }).populate("user", ["name", "server"]);
+
+      if (!profile) {
+        return res.status(400).json({ msg: "такого профиля не существует"})
+    }
   } catch (err) {
     console.error(err.message);
     res.status(500).send("ошибка сервера");
