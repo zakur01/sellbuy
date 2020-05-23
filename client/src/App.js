@@ -1,0 +1,48 @@
+import React, { Fragment, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
+import store from "./store";
+import { Provider } from "react-redux";
+import Navbar from "./components/layout/navbar";
+import MainPage from "./components/layout/mainpage";
+import Register from "./components/auth/register";
+import Login from "./components/auth/login";
+import { loadUser } from "./actions/auth";
+import setAuthToken from "./utils/setAuthToken";
+import Dashboard from "./components/dashboard/dashboard";
+import PrivateRoute from "./components/routing/privateRoute";
+import Alert from "./components/layout/alert";
+import CreateProfile from './components/profile-form/createProfile'
+import EditProfile from './components/profile-form/editProfile'
+
+const App = () => {
+  useEffect(() => {
+    setAuthToken(localStorage.token);
+      store.dispatch(loadUser());
+  }, []);
+// 
+  
+  
+  return (
+    <Provider store={store}>
+      <Router>
+        <Fragment>
+          <Navbar />
+          <Route exact path="/" component={MainPage} />
+          <section className="container">
+            <Alert />
+            <Switch>
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+              <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/create-profile" component={CreateProfile} />
+              <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+            </Switch>
+          </section>
+        </Fragment>
+      </Router>
+    </Provider>
+  );
+};
+
+export default App;

@@ -44,10 +44,11 @@ router.post(
     if (!errors.isEmpty()) {
     res.status(400).json({ errors: errors.array() });
     }
-    const { contacts } = req.body;
+    const { contacts, location } = req.body;
     const profileFields = {};
     profileFields.user = req.user.id;
     if (contacts) profileFields.contacts = contacts;
+    if (location) profileFields.location = location;
 
     try {
       let profile = await Profile.findOne({ user: req.user.id });
