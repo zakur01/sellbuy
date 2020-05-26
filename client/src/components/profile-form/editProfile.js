@@ -14,10 +14,11 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
     getCurrentProfile();
 
     setFormData({
-      location: loading || !profile.location ? ' ' : profile.location
+      location: loading || !profile.location ? ' ' : profile.location,
+      contacts: loading || !profile.contacts ? ' ' : profile.contacts
       
     });
-  }, [loading]);
+  }, [profile.location, profile.contacts,loading, getCurrentProfile]);
 
   const {
     location,
@@ -36,34 +37,39 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
       <h1 className="large text-primary">Редактировать профиль</h1>{" "}
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
+          Месторасположение:
           <input
             type="text"
             placeholder="Город"
             name="location"
             value={location}
-            onChange={e => onChange(e)}
-          />{" "}
+            onChange={(e) => onChange(e)}
+          />
         </div>
         <div className="form-group">
+          Контактные данные:
           <input
             type="text"
-            placeholder="Contacts   "
+            placeholder="Контактные данные"
             name="contacts"
             value={contacts}
-            onChange={e => onChange(e)}
-          />{" "}
+            onChange={(e) => onChange(e)}
+          />
         </div>
-        <input type="submit" className="btn btn-primary my-1" />
+        <input
+          type="submit"
+          value="Отправить"
+          className="btn btn-primary my-1"
+        />
       </form>{" "}
       <Link className="btn btn-light my-1" to="/dashboard">
-        Go Back
+        Назад
       </Link>
     </Fragment>
   );
 };
 
 EditProfile.propTypes = {
-  EditProfile: PropTypes.func.isRequired,
   profile: PropTypes.object.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
 };

@@ -21,7 +21,7 @@ const CreateProfile = ({ createProfile, history }) => {
 
   return (
     <Fragment>
-      <h1 className="large text-primary">Редактировать профиль</h1>{" "}
+      <h1 className="large text-primary">Создать профиль</h1>{" "}
       <form className="form" onSubmit={e => onSubmit(e) }>
         <div className="form-group">
           <input
@@ -35,16 +35,16 @@ const CreateProfile = ({ createProfile, history }) => {
         <div className="form-group">
           <input
             type="text"
-            placeholder="Contacts   "
+            placeholder="Контактные данные"
             name="contacts"
             value={contacts}
             onChange={onChange}
           />{" "}
         </div>
-      <input type="submit" className="btn btn-primary my-1" />
+      <input type="submit" value="Отправить" className="btn btn-primary my-1" />
       </form>{" "}
       <Link className="btn btn-light my-1" to="/dashboard">
-        Go Back
+        Назад
       </Link>
     </Fragment>
   );

@@ -1,7 +1,6 @@
 import axios from "axios";
 
 import { setAlert } from "./alert";
-import setAuthToken from "../utils/setAuthToken";
 
 //
 export const register = ({ name, email, password }) => async (dispatch) => {

@@ -14,6 +14,12 @@ import PrivateRoute from "./components/routing/privateRoute";
 import Alert from "./components/layout/alert";
 import CreateProfile from './components/profile-form/createProfile'
 import EditProfile from './components/profile-form/editProfile'
+import Profiles from './components/profiles/profiles'
+import Profile from './components/profile/profile'
+import Posts from './components/posts/posts'
+import Post from './components/post/post'
+
+
 
 const App = () => {
   useEffect(() => {
@@ -34,9 +40,13 @@ const App = () => {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/profiles" component={Profiles} />
+              <Route exact path="/profile/:id" component={Profile} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/create-profile" component={CreateProfile} />
               <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+              <PrivateRoute exact path="/posts" component={Posts} />
+              <PrivateRoute exact path="/posts/:id" component={Post} />
             </Switch>
           </section>
         </Fragment>
