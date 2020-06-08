@@ -78,3 +78,48 @@ export const getPost = id => async dispatch => {
         })
     }
 }
+
+//добавление комментария
+export const addComment = (postId, formData ) => async dispatch => {
+    const config = {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
+    try {
+        const res = await axios.post(`/api/post/comment/${postId}`, formData, config);
+        dispatch ({
+            type: "ADD_COMMENT",
+            payload: res.data
+        })
+
+        dispatch(setAlert("Комментарий добавлен", "success"))
+    } catch (err) {
+        dispatch({
+        type: "POST_ERROR",
+        payload: { msg: err.response.statusText, status: err.response.status }
+    })
+    }
+}
+    
+
+
+//удаление комментария
+export const deleteComment = (postId, commentId) => async dispatch => {
+  
+    try {
+        await axios.delete(`/api/post/comment/${postId}/${commentId}`);
+        dispatch ({
+            type: "REMOVE_COMMENT",
+            payload: commentId
+        })
+
+        dispatch(setAlert("Комментарий удалён", "success"))
+    } catch (err) {
+        dispatch({
+        type: "POST_ERROR",
+        payload: { msg: err.response.statusText, status: err.response.status }
+    })
+    }
+}
+

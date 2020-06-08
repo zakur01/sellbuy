@@ -4,9 +4,14 @@ import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import auth from "../../reducers/auth";
-import {deletePost} from '../../actions/post'
+import { deletePost } from "../../actions/post";
 
-const postItem = ({ auth, post: { _id, text, name, avatar, user, comment, date }, deletePost  }) => (
+const postItem = ({
+  auth,
+  post: { _id, text, name, avatar, user, comment, date },
+  deletePost,
+  showActions,
+}) => (
   <div className="post bg-white p-1 my-1">
     <div>
       <a href="profile.html">
@@ -19,19 +24,30 @@ const postItem = ({ auth, post: { _id, text, name, avatar, user, comment, date }
       <p className="post-date">
         <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
-      
-      <Link to={`/posts/${_id}`} className="btn btn-primary">
-        Подробнее {" "} 
-        {/* {comment.length} */}
-      </Link>
-      {!auth.loading && user === auth.user._id && (
-        <button onClick={(e) => deletePost(_id)} type="button" className="btn btn-danger">
-          <i className="fas fa-times"></i>
-        </button>
+
+      {showActions && (
+        <Fragment>
+          <Link to={`/posts/${_id}`} className="btn btn-primary">
+            Подробнее {/* {comment.length} */}
+          </Link>
+          {!auth.loading && user === auth.user._id && (
+            <button
+              onClick={(e) => deletePost(_id)}
+              type="button"
+              className="btn btn-danger"
+            >
+              <i className="fas fa-times"></i>
+            </button>
+          )}
+        </Fragment>
       )}
     </div>
   </div>
 );
+
+postItem.defaultProps = {
+  showActions: true
+}
 
 postItem.propTypes = {
   post: PropTypes.object.isRequired,
@@ -41,7 +57,6 @@ postItem.propTypes = {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
-  
 });
 
 export default connect(mapStateToProps, { deletePost })(postItem);

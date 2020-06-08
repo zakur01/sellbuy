@@ -88,6 +88,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
           type="submit"
           className="btn btn-primary"
           placeholder="Зарегистрироваться"
+          value="Зарегистрироваться"
         />
       </form>
       <p className="my-1">
