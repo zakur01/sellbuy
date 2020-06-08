@@ -92,7 +92,7 @@ router.delete("/:id", auth, async (req, res) => {
 
 //комментирование объявления
 router.post(
-  "/comment/:id",
+  "/comments/:id",
   [auth, [check("text", "Введите комментарий").not().isEmpty()]],
   async (req, res) => {
     try {
@@ -105,9 +105,9 @@ router.post(
         user: req.user.id,
       };
 
-      post.comment.unshift(newComment);
+      post.comments.unshift(newComment);
       await post.save();
-      res.json(post.comment);
+      res.json(post.comments);
     } catch (err) {
       console.error(err.message);
       res.status(500).json({ msg: "Ошибка сервера" });
@@ -116,11 +116,11 @@ router.post(
 );
 
 //удаление комментария
-router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
+router.delete("/comments/:id/:comment_id", auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id);
     const post = await Post.findById(req.params.id);
-    const comment = post.comment.find(
+    const comment = post.comments.find(
       comment => comment.id === req.params.comment_id
     );
     if (!comment) {
@@ -129,13 +129,13 @@ router.delete("/comment/:id/:comment_id", auth, async (req, res) => {
     if (comment.user.toString() !== req.user.id) {
       res.status(401).json({ msg: "Вы не авторизованы удалять комментарии" });
     }
-    const removeIndex = post.comment
+    const removeIndex = post.comments
       .map((comment) => comment.user.toString())
       .indexOf(req.user.id);
-    post.comment.splice(removeIndex, 1);
+    post.comments.splice(removeIndex, 1);
     await post.save();
     res.json('comment is deleted');
-    res.json(post.comment)
+    res.json(post.comments)
   } catch (err) {
     console.error(err.message);
     res.status(500).json({ msg: "Ошибка сервера" });

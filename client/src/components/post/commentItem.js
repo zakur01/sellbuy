@@ -9,7 +9,7 @@ const commentItem = ({
   auth,
   postId,
   deleteComment,
-  comment: { _id, text, name, avatar, user, date },
+  comment: { _id, text, name, avatar, user, date }
 }) => (
   <div className="post bg-white p-1 my-1">
     <div>
@@ -38,7 +38,7 @@ const commentItem = ({
 
 commentItem.propTypes = {
   postId: PropTypes.string.isRequired,
-  comment: PropTypes.object.isRequired,
+  comments: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   deleteComment: PropTypes.func.isRequired,
 };

@@ -5,7 +5,7 @@ import { addComment } from "../../actions/post";
  
 
 const Comment = ({ postId, addComment}) => {
-const [text, setText] = useState(" ")
+const [text, setText] = useState('')
   return (
     <div className="post-form">
          <div className="bg-primary p">
@@ -16,7 +16,7 @@ const [text, setText] = useState(" ")
            onSubmit={(e) => {
              e.preventDefault();
              addComment(postId, { text });
-             setText("");
+             setText(" ");
            }}
          >
            <textarea
