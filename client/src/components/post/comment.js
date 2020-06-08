@@ -16,7 +16,7 @@ const [text, setText] = useState('')
            onSubmit={(e) => {
              e.preventDefault();
              addComment(postId, { text });
-             setText(" ");
+             setText("");
            }}
          >
            <textarea
