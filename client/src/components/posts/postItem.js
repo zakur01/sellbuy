@@ -3,11 +3,12 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
+import auth from "../../reducers/auth";
 import { deletePost } from "../../actions/post";
 
 const postItem = ({
   auth,
-  post: { _id, text, name, avatar, user, date },
+  post: { _id, text, image, name, avatar, user, comment, date },
   deletePost,
   showActions,
 }) => (
@@ -20,6 +21,7 @@ const postItem = ({
     </div>
     <div>
       <p className="my-1">{text}</p>
+      <img className="image" src={image}/>
       <p className="post-date">
         <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
@@ -27,7 +29,7 @@ const postItem = ({
       {showActions && (
         <Fragment>
           <Link to={`/posts/${_id}`} className="btn btn-primary">
-            Подробнее
+            Подробнее {/* {comment.length} */}
           </Link>
           {!auth.loading && user === auth.user._id && (
             <button
