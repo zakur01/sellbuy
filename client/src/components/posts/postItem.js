@@ -19,7 +19,7 @@ const postItem = ({
         <h4>{name} </h4>
       </a>
     </div>
-    <div>
+    <container>
       <p className="my-1">{text}</p>
       <img className="image2" src={image}/>
       <p className="post-date">
@@ -42,7 +42,7 @@ const postItem = ({
           )}
         </Fragment>
       )}
-    </div>
+    </container>
   </div>
 );
 

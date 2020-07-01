@@ -36,7 +36,8 @@ ul {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
+  /* width: 300px */
 }
 
 /* Utilities */
@@ -490,12 +491,13 @@ button {
 .post > div:first-child {
   text-align: center;
 }
-.image2 {
+/* .image2 {
   width: 200px;
-}
+} */
 
 .post img {
-  width: 300px;
+  width: 400px;
+  max-width: 100%;
  }
 
 
@@ -515,6 +517,8 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
+
+  
   .container {
     margin-top: 8rem;
   }
@@ -599,6 +603,8 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+
+  
 }
 
 .text-area {
