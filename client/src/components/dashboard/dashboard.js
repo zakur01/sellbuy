@@ -47,7 +47,6 @@ const Dashboard = ({
     <Fragment>
       <h1 className="large text-primary">Профиль</h1>
       <img className="image round-img"src={user && user.avatar}></img>
-      <input type="file" name="avatar" onChange={changeAvatar}></input>
       <p className="lead">
          {user && user.name}
       </p>
