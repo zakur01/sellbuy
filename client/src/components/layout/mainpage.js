@@ -14,11 +14,11 @@ const MainPage = ({ isAuthenticated }) => {
           <h1 className="x-larger">SELLBUY</h1>
           <p className="lead">портал для объявлений</p>
           <div className="buttons">
-            <Link to="/posts" className="btn btn-primary">
+            {/* <Link to="/posts" className="btn btn-primary">
               Список объявлений
             </Link>
             <br/>
-            <br/>
+            <br/> */}
             
             
             <Link to="/register" className="btn btn-primary">
