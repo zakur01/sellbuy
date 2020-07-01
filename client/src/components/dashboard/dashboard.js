@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect, Fragment, useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
@@ -9,19 +9,47 @@ import DashboardActions from './dashboard-actions'
 const Dashboard = ({
   getCurrentProfile,
   auth: { user },
-  profile: { profile, loading },
+  profile: { profile, loading},
 }) => {
   useEffect(() => {
     getCurrentProfile();
   }, [getCurrentProfile]);
+
+
+
+  const [avatar, setAvatar] = useState("");
+  const changeAvatar = async e => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "j97xzaqe");
+
+    const res = await fetch(
+      "https://api.cloudinary.com/v1_1/dtoxn56sf/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+    const file = await res.json();
+    console.log(file);
+
+    setAvatar(file.secure_url);
+
+   ;
+  }
+
+ 
 
   return loading && profile === null ? (
     <Spinner />
   ) : (
     <Fragment>
       <h1 className="large text-primary">Профиль</h1>
+      <img className="image round-img"src={user && user.avatar}></img>
+      <input type="file" name="avatar" onChange={changeAvatar}></input>
       <p className="lead">
-        <i className="fas fa-user"></i> Здравствуйте {user && user.name}
+         {user && user.name}
       </p>
       {profile !== null ? (
           <Fragment>
@@ -30,10 +58,10 @@ const Dashboard = ({
        : 
         (<Fragment>
           <p>
-            Вы ещё не создали профиль, пожалуйста добавьте контактную информацию
+            Пожалуйста добавьте контактную информацию
           </p>
           <Link to="/create-profile" className="btn btn-primary my-1">
-            Создать профиль
+            Добавить
           </Link>
         </Fragment>)
       }

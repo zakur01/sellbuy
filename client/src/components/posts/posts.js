@@ -1,4 +1,5 @@
 import React, { Fragment, useEffect } from "react";
+import { Link } from 'react-router-dom'
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getPosts } from "../../actions/post";
@@ -19,7 +20,8 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
       <p className="lead">
         <i className="fas fas-user"></i>
       </p>
-      <PostForm />
+      <Link to="/newpost" className="btn btn-success my-2 btn:hover">Создать объявление</Link>
+      {/* <PostForm /> */}
         <div className='posts'>
         {posts.map(post => (
             <PostItem key={post._id} post={post} />

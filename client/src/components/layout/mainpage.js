@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 
 const MainPage = ({ isAuthenticated }) => {
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />
+    return <Redirect to="/posts" />
   }
   return ( 
     <section className="landing">
@@ -14,16 +14,24 @@ const MainPage = ({ isAuthenticated }) => {
           <h1 className="x-larger">SELLBUY</h1>
           <p className="lead">портал для объявлений</p>
           <div className="buttons">
+            <Link to="/posts" className="btn btn-primary">
+              Список объявлений
+            </Link>
+            <br/>
+            <br/>
+            
+            
             <Link to="/register" className="btn btn-primary">
               Зарегистрироваться
             </Link>
             <Link to="login" className="btn btn-primary">
-              Войти
+              Логин
             </Link>
+           
           </div>
         </div>
       </div>
-    </section>
+     </section>
   );
 };
 MainPage.propTypes = {

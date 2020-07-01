@@ -23,11 +23,12 @@ const Login = ({ login, isAuthenticated }) => {
   };
 
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />
+    return <Redirect to="/posts" />
   }
 
   return (
     <Fragment>
+      {/* <div className="dark-overlay"> */}
       <h1 className="large text-primary">Войти</h1>
       <p className="lead">
         <i className="fas fa-user"></i> Введите данные для входа
@@ -55,6 +56,7 @@ const Login = ({ login, isAuthenticated }) => {
       <p className="my-1">
         Нет аккаунта? <Link to="/register">Зарегистрироваться</Link>
       </p>
+      {/* </div> */}
     </Fragment>
   );
 };

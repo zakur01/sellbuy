@@ -1,8 +1,8 @@
-/* Global Styles */
+ /* Global Styles */
 :root {
   --primary-color: #17a2b8;
   --dark-color: #002040;
-  --light-color: #f4f4f4;
+  --light-color: #f8f4f4ee;
   --danger-color: #dc3545;
   --success-color: #28a745;
   --font: "Raleway", sans-serif;
@@ -14,12 +14,13 @@
   padding: 0;
 }
 
+
 body {
   font-size: 1rem;
   line-height: 1.6;
-  color: rgb(0, 0, 0);
+  color: #002040;
   font-family: "Jost", sans-serif;
-  background-color: white;
+  background-color: #ffffff
 }
 
 input {
@@ -47,6 +48,8 @@ img {
   margin-top: 6rem;
   margin-bottom: 3rem;
 }
+
+
 
 /* Text Styles*/
 .x-large {
@@ -250,13 +253,26 @@ img {
   color: #888;
 }
 
+/* .form input[type="text"] 
+  {
+    display: block;
+    color: rgb(134, 18, 18);
+    background-color: black;
+    width: 100%;
+    padding: 0.4rem;
+    font-size: 1.2rem;
+    border: 1px white solid
+  } */
+  
 .form input[type="text"],
 .form input[type="email"],
 .form input[type="password"],
 .form input[type="date"],
 .form select,
-.form textarea {
+.form textarea {  
   display: block;
+  /* color: white; */
+  /* background-color: black; */
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
@@ -277,21 +293,6 @@ button {
   width: 4rem;
 }
 
-.form .social-input i.fa-twitter {
-  color: #38a1f3;
-}
-.form .social-input i.fa-facebook {
-  color: #3b5998;
-}
-.form .social-input i.fa-instagram {
-  color: #3f729b;
-}
-.form .social-input i.fa-youtube {
-  color: #c4302b;
-}
-.form .social-input i.fa-linkedin {
-  color: #0077b5;
-}
 
 .table th,
 .table td {
@@ -471,6 +472,16 @@ button {
   grid-gap: 2rem;
   align-items: center;
 
+  border: 2px solid #17a3b845;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.post-comment {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 2rem;
+  align-items: center;
   border: 1px solid #17a3b845;
   border-radius: 10px;
   color: rgb(0, 0, 0);
@@ -484,7 +495,7 @@ button {
 }
 
 .post img {
-  width: 100px;
+  width: 300px;
  }
 
 
@@ -593,4 +604,9 @@ button {
 .text-area {
   color: rgb(0, 0, 0);
   font-family: inherit;
+}
+
+.image {
+  width: 100px
+  
 }

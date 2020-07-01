@@ -14,14 +14,14 @@ const postItem = ({
 }) => (
   <div className="post bg-white p-1 my-1">
     <div>
-      <a href="profile.html">
-        <img className="round-img" src={avatar} alt="" />
+      <a href={`/profile/${user}`}>
+        {/* <img className="round-img" src={avatar} alt="" /> */}
         <h4>{name} </h4>
       </a>
     </div>
     <div>
       <p className="my-1">{text}</p>
-      <img className="image" src={image}/>
+      <img className="image2" src={image}/>
       <p className="post-date">
         <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
@@ -58,6 +58,7 @@ postItem.propTypes = {
 
 const mapStateToProps = (state) => ({
   auth: state.auth,
+  profile: state.profile
 });
 
 export default connect(mapStateToProps, { deletePost })(postItem);

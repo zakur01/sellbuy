@@ -18,6 +18,7 @@ import Profiles from './components/profiles/profiles'
 import Profile from './components/profile/profile'
 import Posts from './components/posts/posts'
 import Post from './components/post/post'
+import NewPost from './components/posts/newPost'
 
 
 
@@ -43,9 +44,10 @@ const App = () => {
               <Route exact path="/profiles" component={Profiles} />
               <Route exact path="/profile/:id" component={Profile} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/newpost" component={NewPost} />
               <PrivateRoute exact path="/create-profile" component={CreateProfile} />
               <PrivateRoute exact path="/edit-profile" component={EditProfile} />
-              <PrivateRoute exact path="/posts" component={Posts} />
+              <Route exact path="/posts" component={Posts} />
               <PrivateRoute exact path="/posts/:id" component={Post} />
             </Switch>
           </section>

@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
+import Spinner from "../layout/spinner"
 
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState(" ");
 
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState("");
+  
 
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -29,7 +32,6 @@ const PostForm = ({ addPost }) => {
 
     setImage(file.secure_url);
     setLoading(false);
-
   };
   return (
     <div className="post-form">
@@ -42,6 +44,7 @@ const PostForm = ({ addPost }) => {
           e.preventDefault();
           addPost({ text, image });
           setText("");
+         
         }}
       >
         <textarea
@@ -63,15 +66,13 @@ const PostForm = ({ addPost }) => {
         />
 
         
-
         <input type="submit" className="btn btn-dark my-1" value="Отправить" />
-        {
-          loading ? (<h3>
-            загрузка...
-          </h3>) : (
-            <img src={image}/>
-          )
-        } 
+        
+        {/* {loading ? (
+          <Spinner />
+        ) : (
+          <img src={image} style={{ width: "400px" }} />
+        )} */}
       </form>
     </div>
   );

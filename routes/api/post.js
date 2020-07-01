@@ -104,6 +104,7 @@ router.post(
         name: user.name,
         avatar: user.avatar,
         user: req.user.id,
+        image: req.body.image
       };
 
       post.comments.unshift(newComment);
