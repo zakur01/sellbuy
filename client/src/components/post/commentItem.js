@@ -18,7 +18,7 @@ const commentItem = ({
         <h4>{name}</h4>
       </Link>
     </div>
-    <div>
+    <div classname="post">
       <p className="my-1">{text}</p>
       <img src={image}/>
       <p className="post-date">

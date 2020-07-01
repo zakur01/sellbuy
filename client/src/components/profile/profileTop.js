@@ -21,7 +21,7 @@ const profileTop = ({ profile: {
             <p>{location}</p>
             <p>{contacts}</p>
        
-      </div>
+      </div>  
     );
 }
 

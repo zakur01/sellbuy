@@ -20,6 +20,7 @@ const Post = ({ getPost, post: { post, loading },  match }) => {
     </Link>
         <PostItem post={post} showActions={false} />
         <div className="comments">
+            <h1>Комментарии: </h1>
         {post.comments.reverse().map((comment) => (
             <CommentItem key={comment._id} comment={comment} postId={post._id} />
             ))}

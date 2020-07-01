@@ -473,7 +473,7 @@ button {
   grid-gap: 2rem;
   align-items: center;
 
-  border: 2px solid #17a3b845;
+  border: 1px solid #17a3b845;
   border-radius: 10px;
   color: rgb(0, 0, 0);
 }
@@ -484,7 +484,7 @@ button {
   grid-gap: 2rem;
   align-items: center;
   border: 1px solid #17a3b845;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   color: rgb(0, 0, 0);
 }
 
