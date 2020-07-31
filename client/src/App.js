@@ -19,7 +19,7 @@ import Profile from './components/profile/profile'
 import Posts from './components/posts/posts'
 import Post from './components/post/post'
 import NewPost from './components/posts/newPost'
-
+import history from './history'
 
 
 const App = () => {
@@ -32,13 +32,13 @@ const App = () => {
   
   return (
     <Provider store={store}>
-      <Router>
+      <Router history={history}>
         <Fragment>
           <Navbar />
-          <Route exact path="/" component={MainPage} />
-          <section className="container">
             <Alert />
             <Switch>
+          <Route exact path="/" component={MainPage} />
+          <section className="container">
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/profiles" component={Profiles} />
@@ -48,9 +48,9 @@ const App = () => {
               <PrivateRoute exact path="/create-profile" component={CreateProfile} />
               <PrivateRoute exact path="/edit-profile" component={EditProfile} />
               <Route exact path="/posts" component={Posts} />
-              <PrivateRoute exact path="/posts/:id" component={Post} />
-            </Switch>
+              <Route exact path="/posts/:id" component={Post} />
           </section>
+            </Switch>
         </Fragment>
       </Router>
     </Provider>

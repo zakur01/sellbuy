@@ -8,17 +8,13 @@ const MainPage = ({ isAuthenticated }) => {
     return <Redirect to="/posts" />
   }
   return ( 
-    <section className="landing">
+    <div className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
           <h1 className="x-larger">SELLBUY</h1>
           <p className="lead">портал для объявлений</p>
           <div className="buttons">
-            {/* <Link to="/posts" className="btn btn-primary">
-              Список объявлений
-            </Link>
-            <br/>
-            <br/> */}
+             
             
             
             <Link to="/register" className="btn btn-primary">
@@ -27,11 +23,19 @@ const MainPage = ({ isAuthenticated }) => {
             <Link to="login" className="btn btn-primary">
               Логин
             </Link>
+            <br></br>
+            <br></br>
+            <br></br>
+            <Link  to="/posts" className="main-btn">
+                Список объявлений
+              </Link>
+              <br/>
+              <br/>
            
           </div>
         </div>
       </div>
-     </section>
+     </div>
   );
 };
 MainPage.propTypes = {

@@ -31,7 +31,6 @@ export const addPost = formData => async dispatch => {
             type: "ADD_POST",
             payload: res.data
         })
-
         dispatch(setAlert("Объявление создано", "success"))
     } catch (err) {
         dispatch({

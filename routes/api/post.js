@@ -97,6 +97,9 @@ router.post(
   [auth, [check("text", "Введите комментарий").not().isEmpty()]],
   async (req, res) => {
     try {
+      if (!user) {
+        alert("324")
+      }
       const user = await User.findById(req.user.id).select("-password");
       const post = await Post.findById(req.params.id);
       const newComment = {
@@ -106,7 +109,9 @@ router.post(
         user: req.user.id,
         image: req.body.image
       };
-
+      if (!user) {
+        alert("324")
+      }
       post.comments.unshift(newComment);
       await post.save();
       res.json(post.comments);

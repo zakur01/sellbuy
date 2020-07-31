@@ -3,7 +3,9 @@ import PropTypes from "prop-types";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { addPost } from "../../actions/post";
-import Spinner from "../layout/spinner"
+import Spinner from "../layout/spinner";
+import history from '../../history';
+
 
 const PostForm = ({ addPost }) => {
   const [text, setText] = useState(" ");
@@ -33,6 +35,9 @@ const PostForm = ({ addPost }) => {
     setImage(file.secure_url);
     setLoading(false);
   };
+
+  
+ 
   return (
     <div className="post-form">
       <div className="bg-primary p">
@@ -44,7 +49,7 @@ const PostForm = ({ addPost }) => {
           e.preventDefault();
           addPost({ text, image });
           setText("");
-         
+          history.push("/posts")
         }}
       >
         <textarea

@@ -54,7 +54,7 @@ const uploadImage = async (e) => {
            >
              {" "}
            </textarea>
-           <input type="file" name="image" onChange={uploadImage}></input>
+           <input type="file" name="image"  onChange={uploadImage}></input>
            <input type="submit" className="btn btn-dark my-1" value="Отправить" />
          </form>
        </div>
