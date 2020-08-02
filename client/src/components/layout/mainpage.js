@@ -17,10 +17,10 @@ const MainPage = ({ isAuthenticated }) => {
              
             
             
-            <Link to="/register" className="btn btn-primary">
+            <Link to="/register" className="btn btn-primary hide-main">
               Зарегистрироваться
             </Link>
-            <Link to="login" className="btn btn-primary">
+            <Link to="login" className="btn btn-primary hide-main">
               Логин
             </Link>
             <br></br>

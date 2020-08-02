@@ -10,7 +10,9 @@ const ProfileSchema = new mongoose.Schema({
     },
     contacts: {
         type: String
-    }
+    },
+  
+    
 })
 
 module.exports = Profile = mongoose.model('profile', ProfileSchema);

@@ -19,7 +19,6 @@ import Profile from './components/profile/profile'
 import Posts from './components/posts/posts'
 import Post from './components/post/post'
 import NewPost from './components/posts/newPost'
-import history from './history'
 
 
 const App = () => {
@@ -32,7 +31,7 @@ const App = () => {
   
   return (
     <Provider store={store}>
-      <Router history={history}>
+      <Router >
         <Fragment>
           <Navbar />
             <Alert />

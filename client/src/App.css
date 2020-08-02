@@ -540,7 +540,9 @@ button {
 /* Mobile Styles */
 @media (max-width: 700px) {
 
-  
+  .hide-main {
+    display: none;
+  }
   .container {
     margin-top: 8rem;
   }
