@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 const profileTop = ({ profile: {
     contacts,
     location,
+    avatar,
     user: {
         name,
-        avatar
+        
     }
 }}) => {
     return (

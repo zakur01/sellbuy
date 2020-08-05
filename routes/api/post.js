@@ -97,9 +97,7 @@ router.post(
   [auth, [check("text", "Введите комментарий").not().isEmpty()]],
   async (req, res) => {
     try {
-      if (!user) {
-        alert("324")
-      }
+     
       const user = await User.findById(req.user.id).select("-password");
       const post = await Post.findById(req.params.id);
       const newComment = {
@@ -117,7 +115,7 @@ router.post(
       res.json(post.comments);
     } catch (err) {
       console.error(err.message);
-      res.status(500).json({ msg: "Ошибка сервера" });
+      res.status(520).json({ msg: "Ошибка сервера" });
     }
   }
 );

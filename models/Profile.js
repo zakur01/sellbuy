@@ -11,6 +11,12 @@ const ProfileSchema = new mongoose.Schema({
     contacts: {
         type: String
     },
+
+    avatar: {
+        type: String
+    }
+    
+    
   
     
 })

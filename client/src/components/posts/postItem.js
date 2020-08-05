@@ -1,28 +1,38 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect } from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import Moment from "react-moment";
 import { connect } from "react-redux";
 import auth from "../../reducers/auth";
 import { deletePost } from "../../actions/post";
+import { getCurrentProfile } from '../../actions/profile'
 import { post } from "request";
 
-const postItem = ({
+const PostItem = ({
+  profile: { profile },
+  getCurrentProfile,
   auth,
-  post: { _id, text, image, name, avatar, user, comment, date },
+  post: { _id, text, image, name, user, comment, date },
   deletePost,
   showActions,
-}) => (
-  <div className="post bg-white p-1 my-1">
+}) => {
+  useEffect(() => {
+    getCurrentProfile();
+
+  }, []);
+
+
+  return (<div className="post bg-white p-1 my-1">
     <div>
       <a href={`/profile/${user}`}>
-        {/* <img className="round-img" src={avatar} alt="" /> */}
+        {/* <img className="round-img" src={auth.user.avatar} alt="" /> */}
+        {/* <p>{profile.location}</p> */}
         <h4>{name} </h4>
       </a>
     </div>
     <container>
       <p className="my-1">{text}</p>
-      <img className="image2" src={image}/>
+      <img className="image2" src={image} />
       <p className="post-date">
         <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
@@ -32,34 +42,37 @@ const postItem = ({
           <Link to={`/posts/${_id}`} className="btn btn-primary">
             Подробнее {/* {comment.length} */}
           </Link>
-        {auth.isAuthenticated && <button
-                onClick={(e) => deletePost(_id)}
-                type="button"
-                className="btn btn-danger"
-              >
-                <i className="fas fa-times"></i>
-              </button>}
+          {auth.isAuthenticated && <button
+            onClick={(e) => deletePost(_id)}
+            type="button"
+            className="btn btn-danger"
+          >
+            <i className="fas fa-times"></i>
+          </button>}
         </Fragment>
       )}
     </container>
-  </div>
-);
+  </div>)
+  
+};
 
-postItem.defaultProps = {
+PostItem.defaultProps = {
   showActions: true
 }
 
-postItem.propTypes = {
+PostItem.propTypes = {
   post: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   deletePost: PropTypes.func.isRequired,
+  getCurrentProfile: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
   auth: state.auth,
-  profile: state.profile
+  // profile: state.profile
 });
 
-export default connect(mapStateToProps, { deletePost })(postItem);
+export default connect(mapStateToProps, { getCurrentProfile, deletePost })(PostItem);
+

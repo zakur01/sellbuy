@@ -1,9 +1,10 @@
 const initialState = {
-  profile: null,
+  profile: [],
   profiles: [],
   repos: [],
   loading: true,
   error: {},
+  avatar: ""
 };
 
 export default function (state = initialState, action) {

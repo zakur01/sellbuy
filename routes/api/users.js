@@ -72,6 +72,31 @@ router.post(
   }
 );
 
+// //смена аватара
+// router.post("/avatar", [auth], async (req, res) => {
+//   const avatar = req.body;
+//   const avatarField = {};
+//   avatarField.user = req.user.id;
+//   if (avatar) avatarField.avatar = avatar;
+//   try {
+//     let user = await User.findOne({ user: req.user.id})
+
+//     if (user) {
+//       user = await User.findByIdAndUpdate(
+//         { user: req.user.id },
+//         { $set: avatarField },
+//         { new: true }
+//       )
+//       return res.json(user);
+
+  
+//     }
+//   } catch (err) {
+//     console.log(err.message);
+//     res.status(500).send('324!!!аватар!')
+//   }
+// })
+
 
 module.exports = router;
 

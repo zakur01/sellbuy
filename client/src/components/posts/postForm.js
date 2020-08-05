@@ -49,7 +49,6 @@ const PostForm = ({ addPost }) => {
           e.preventDefault();
           addPost({ text, image });
           setText("");
-          history.push("/posts")
         }}
       >
         <textarea

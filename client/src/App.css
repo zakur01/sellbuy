@@ -411,7 +411,8 @@ button {
 }
 
 .profile-top img {
-  width: 250px;
+  width: 300px;
+  height: auto;
 }
 
 .profile-top .icons a {
@@ -597,7 +598,7 @@ button {
 
   .profile-top img,
   .profile img {
-    width: 200px;
+    width: 300px;
     margin: auto;
   }
 

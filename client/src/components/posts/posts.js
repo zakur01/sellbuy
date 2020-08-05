@@ -6,10 +6,12 @@ import { getPosts } from "../../actions/post";
 import Spinner from "../layout/spinner";
 import PostItem from './postItem'
 import PostForm from './postForm'
+import { getCurrentProfile } from "../../actions/profile";
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
     getPosts();
+    
   });
 
   return loading ? (
@@ -40,7 +42,7 @@ Posts.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  post: state.post
+  post: state.post,
 });
 
 export default connect(mapStateToProps, { getPosts })(Posts);

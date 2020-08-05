@@ -12,6 +12,7 @@ const EditProfile = ({
   const [formData, setFormData] = useState({
     location: ' ',
     contacts: ' ',
+    avatar: ' '
   });
   const [image, setImage] = useState('');
   const [loadingg, setLoading] = useState(false);
@@ -35,6 +36,8 @@ const EditProfile = ({
 
     setImage(file.secure_url);
     setLoading(false);
+    setFormData({ ...formData, avatar: file.secure_url })
+
   };
 
   useEffect(() => {
@@ -43,27 +46,32 @@ const EditProfile = ({
     setFormData({
       location: loading || !profile.location ? ' ' : profile.location,
       contacts: loading || !profile.contacts ? ' ' : profile.contacts,
+      avatar: loading || !profile.avatar ? ' ' : profile.avatar
     });
-  }, [profile.location, profile.contacts, loading, getCurrentProfile]);
+  }, [profile.location, profile.contacts, profile.avatar, loading, getCurrentProfile]);
 
-  const { location, contacts } = formData;
+  const { location, contacts, avatar } = formData;
+  
 
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = (e) => {
     e.preventDefault();
+
     createProfile(formData, true);
+
   };
   return (
     <Fragment>
       <h1 className="large text-primary">Редактировать профиль</h1>{' '}
+      <img width="200px" height="200px" src={profile.avatar}></img>
       <h2>Сменить аватар</h2>
-      <img src={image}></img>
+      {/* <img width="300px" height="300px" src={image}></img> */}
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <input
           type="file"
-          name="image"
+          name="avatar"
           placeholder="Добавить изображение"
           onChange={uploadImage}
         />
@@ -103,10 +111,12 @@ const EditProfile = ({
 EditProfile.propTypes = {
   profile: PropTypes.object.isRequired,
   getCurrentProfile: PropTypes.func.isRequired,
+  user: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = (state) => ({
   profile: state.profile,
+  user: state.user
 });
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
