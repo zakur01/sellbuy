@@ -12,7 +12,7 @@ const PostItem = ({
   profile: { profile },
   getCurrentProfile,
   auth,
-  post: { _id, text, image, name, user, comment, date },
+  post: { _id, text, user, avatar, image, name, comment, date },
   deletePost,
   showActions,
 }) => {
@@ -25,7 +25,7 @@ const PostItem = ({
   return (<div className="post bg-white p-1 my-1">
     <div>
       <a href={`/profile/${user}`}>
-        {/* <img className="round-img" src={auth.user.avatar} alt="" /> */}
+        <img className="round-img" src={avatar} alt="" />
         {/* <p>{profile.location}</p> */}
         <h4>{name} </h4>
       </a>
@@ -42,13 +42,13 @@ const PostItem = ({
           <Link to={`/posts/${_id}`} className="btn btn-primary">
             Подробнее {/* {comment.length} */}
           </Link>
-          {auth.isAuthenticated && <button
+          {auth.isAuthenticated && user == auth.user._id && (<button
             onClick={(e) => deletePost(_id)}
             type="button"
             className="btn btn-danger"
           >
             <i className="fas fa-times"></i>
-          </button>}
+          </button>)}
         </Fragment>
       )}
     </container>

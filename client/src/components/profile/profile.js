@@ -22,7 +22,7 @@ const Profile = ({
         <Spinner />
       ) : (
         <Fragment>
-          <Link to="/posts" className="btn btn-light">
+          <Link to="/posts`" className="btn btn-light">
             Обратно
           </Link>
           {auth.isAuthenticated &&

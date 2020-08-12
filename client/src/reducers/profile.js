@@ -4,7 +4,7 @@ const initialState = {
   repos: [],
   loading: true,
   error: {},
-  avatar: ""
+  // avatar: ""
 };
 
 export default function (state = initialState, action) {

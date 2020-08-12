@@ -46,7 +46,7 @@ const Dashboard = ({
   ) : (
     <Fragment>
       <h1 className="large text-primary">Профиль</h1>
-      <img className="image round-img"src={profile.user.avatar}></img>
+      <img className="image round-img"src={profile.avatar}></img>
       <p className="lead">
          {user && user.name}
       </p>

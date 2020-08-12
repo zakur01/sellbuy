@@ -5,19 +5,16 @@ const profileTop = ({ profile: {
     contacts,
     location,
     avatar,
-    user: {
-        name,
-        
-    }
+    user
 }}) => {
     return (
       <div class="profile-top bg-primary p-2">
         <img
           class="round-img my-1"
-          src={avatar}
+          src={user.avatar}
           alt=""
         />
-            <h1 class="large">{name}</h1>
+            <h1 class="large">{user.name}</h1>
 
             <p>{location}</p>
             <p>{contacts}</p>
