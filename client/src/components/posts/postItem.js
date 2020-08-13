@@ -42,7 +42,7 @@ const PostItem = ({
           <Link to={`/posts/${_id}`} className="btn btn-primary">
             Подробнее {/* {comment.length} */}
           </Link>
-          {auth.isAuthenticated && user == auth.user._id && (<button
+          {!auth.loading && user == auth.user._id && (<button
             onClick={(e) => deletePost(_id)}
             type="button"
             className="btn btn-danger"
