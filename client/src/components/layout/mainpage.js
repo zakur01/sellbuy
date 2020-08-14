@@ -11,7 +11,7 @@ const MainPage = ({ isAuthenticated }) => {
     <div className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-larger">SELLBUY</h1>
+          <h1 className="x-larger">1488</h1>
           <p className="lead">портал для объявлений</p>
           <div className="buttons">
              
