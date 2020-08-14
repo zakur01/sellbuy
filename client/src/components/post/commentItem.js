@@ -9,18 +9,20 @@ const commentItem = ({
   auth,
   postId,
   deleteComment,
-  comment: { _id, text, image, name, avatar, user, date }
+  comment: { _id, avatar, text, image, name, user, date }
 }) => (
-  <div className="post-comment bg-white p-1 my-1">
-    <div classname="post">
+    <div className="post bg-white p-1 my-1">
+      
     <div >
       <Link to={`/profile/${user}`}>
         {/* <img className="round-img" src={avatar} alt="" /> */}
+          <img className="round-img" width="200px" height="auto" src={avatar} />
         <h4>{name}</h4>
       </Link>
     </div>
+          <container>
       <p className="my-1">{text}</p>
-      <img width="350px" height="auto"src={image}/>
+      <img className="inner-img" src={image}/>
       <p className="post-date">
          <Moment format="YYYY/MM/DD">{date}</Moment>
       </p>
@@ -32,8 +34,8 @@ const commentItem = ({
         >
           <i className="fas fa-times" />
         </button>
-      )}
-    </div>
+          )}
+          </container>
   </div>
 );
 
@@ -42,6 +44,7 @@ commentItem.propTypes = {
   comments: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired,
   deleteComment: PropTypes.func.isRequired,
+  avatar: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

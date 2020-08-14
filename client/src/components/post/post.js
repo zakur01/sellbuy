@@ -26,7 +26,7 @@ const Post = ({ auth, getPost, post: { post, loading },  match }) => {
         <div className="comments">
             <h1>Комментарии: </h1>
         {post.comments.reverse().map((comment) => (
-            <CommentItem key={comment._id} comment={comment} postId={post._id} />
+            <CommentItem key={comment._id} comment={comment} postId={post._id}/>
             ))}
             </div>
         

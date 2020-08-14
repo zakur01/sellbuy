@@ -101,10 +101,12 @@ router.post(
      
       const user = await User.findById(req.user.id).select("-password");
       const post = await Post.findById(req.params.id);
+      const profile = await Profile.findOne({ user: req.user.id })
+      
       const newComment = {
         text: req.body.text,
         name: user.name,
-        avatar: user.avatar,
+        avatar: profile.avatar,
         user: req.user.id,
         image: req.body.image
       };

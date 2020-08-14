@@ -16,23 +16,23 @@ const PostItem = ({
   deletePost,
   showActions,
 }) => {
-  useEffect(() => {
-    getCurrentProfile();
+  // useEffect(() => {
+  //   getCurrentProfile();
 
-  }, []);
+  // }, []);
 
 
   return (<div className="post bg-white p-1 my-1">
     <div>
       <a href={`/profile/${user}`}>
-        <img className="round-img" src={avatar} alt="" />
+        <img className="round-img " src={avatar} alt="" />
         {/* <p>{profile.location}</p> */}
         <h4>{name} </h4>
       </a>
     </div>
     <container>
       <p className="my-1">{text}</p>
-      <img className="image2" src={image} />
+      <img className="inner-img" alt="image_upload" src={image} />
       <p className="post-date">
         <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
@@ -42,7 +42,7 @@ const PostItem = ({
           <Link to={`/posts/${_id}`} className="btn btn-primary">
             Подробнее {/* {comment.length} */}
           </Link>
-          {!auth.loading && user == auth.user._id && (<button
+          {auth.isAuthenticated && user === auth.user._id && (<button
             onClick={(e) => deletePost(_id)}
             type="button"
             className="btn btn-danger"

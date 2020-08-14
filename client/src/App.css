@@ -143,7 +143,7 @@ img {
   display: inline-block;
   background: var(--light-color);
   color: #333;
-  padding: 0.2rem 1.3rem;
+  padding: 0.1rem 1.3rem;
   border-radius: 3px;
   font-size: 0.95rem;
   border: none;
@@ -241,6 +241,7 @@ img {
 .round-img {
   /* width: 100px;  */
   /* height: auto; */
+  width: 50%;
   border-radius: 50%;
 }
 
@@ -498,7 +499,7 @@ button {
   grid-gap: 2rem;
   align-items: center;
 
-  border: 1px solid #17a3b845;
+  border: 2px solid #17a3b845;
   border-radius: 10px;
   color: rgb(0, 0, 0);
 }
@@ -511,6 +512,10 @@ button {
   border: 1px solid #17a3b845;
   /* border-radius: 10px; */
   color: rgb(0, 0, 0);
+  padding: 3vw;
+}
+.post-comment img {
+  width: 8vw;
 }
 
 .post > div:first-child {
@@ -520,12 +525,7 @@ button {
   width: 200px;
 } */
 
-.post img {
-  width: 8vw;
-  /* height: 10px; */
-  /* max-width: 150px; */
-  /* max-width: 100%; */
- }
+
 
 
 .post .comment-count {
@@ -641,7 +641,8 @@ button {
   font-family: inherit;
 }
 
-.image {
-  width: 100px
-  
+
+
+.inner-img {
+  width: 20vw;
 }
