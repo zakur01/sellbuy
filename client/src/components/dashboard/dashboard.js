@@ -57,7 +57,7 @@ const Dashboard = ({
        : 
         (<Fragment>
           <p>
-            Пожалуйста добавьте контактную информацию
+            Настройки профиля
           </p>
           <Link to="/create-profile" className="btn btn-primary my-1">
             Добавить

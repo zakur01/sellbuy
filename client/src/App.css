@@ -600,11 +600,11 @@ button {
 
   /* Profile Page */
 
-  .profile-top img,
+  /* .profile-top img,
   .profile img {
     width: 300px;
     margin: auto;
-  }
+  } */
 
   .profile-grid {
     grid-template-areas:
@@ -633,7 +633,23 @@ button {
     padding: 0.3rem 0.4rem;
   }
 
-  
+  .inner-img {
+    min-width: 60vw;
+    /* border: 4px solid; */
+
+
+  }
+
+  .round-img {
+    max-width: 20vw;
+  }
+  .btn {
+    margin-bottom: 5vh;
+    /* padding: 0; */
+  }
+  .container {
+    margin-top: 5vh;
+  }
 }
 
 .text-area {
