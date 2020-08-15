@@ -32,7 +32,7 @@ const PostItem = ({
     </div>
     <container>
       <p className="my-1">{text}</p>
-      <img className="inner-img" alt="image_upload" src={image} />
+      <img className="inner-img"  src={image} />
       <p className="post-date">
         <Moment format="DD/MM/YYYY">{date}</Moment>
       </p>
