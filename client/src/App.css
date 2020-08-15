@@ -580,6 +580,7 @@ button {
   .navbar {
     display: block;
     text-align: center;
+    z-index: 999999999;
   }
 
   .navbar ul {
