@@ -335,11 +335,11 @@ button {
   justify-content: flex-end;
   align-items: center;
   padding: 0.7rem 2rem;
-  /* position: fixed;
-  z-index: 1; */
+  /* z-index: 1; */ 
+
   width: 100%;
   top: 0;
-  opacity: 0.9;
+  opacity: 0.94;
 }
 
 .navbar ul {
@@ -366,6 +366,7 @@ button {
 .landing {
   background: #030  25f;
   height: 100vh;
+  margin: 0;
   position: relative;
   min-height: 90vh;
   background: black

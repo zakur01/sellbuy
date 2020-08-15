@@ -9,7 +9,7 @@ const MainPage = ({ isAuthenticated }) => {
   }
   return ( 
     <div className="landing">
-      <div className="dark-overlay">
+      {/* <div className="dark-overlay"> */}
         <div className="landing-inner">
           <div data-text="САЛО" className="glitch">САЛО</div>
           {/* <p className="lead">портал для объявлений</p> */}
@@ -32,7 +32,7 @@ const MainPage = ({ isAuthenticated }) => {
               <br/>
            
           </div>
-        </div>
+        {/* </div> */}
       </div>
      </div>
   );
