@@ -7,6 +7,8 @@ const config = require("config");
 const { check, validationResult } = require("express-validator");
 
 const User = require("../../models/User");
+const Profile = require('../../models/Profile');
+const { findOne } = require("../../models/User");
 
 //регистрация
 router.post(
@@ -44,15 +46,22 @@ router.post(
       user = new User({
         name,
         email,
-        avatar,
         password,
       });
+
+      
 
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(password, salt);
 
       await user.save();
 
+      user = await User.findOne({ email })
+      profile = new Profile({
+        avatar,
+        user
+      })
+      await profile.save();
       const payload = {
         user: {
           id: user.id

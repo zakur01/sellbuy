@@ -29,7 +29,7 @@ const Profile = ({
             auth.loading === false &&
             auth.user._id === profile.user._id && (
               <Link to="/edit-profile" className="btn btn-dark">
-                Редактировать профиль
+                Настройки
               </Link>
             )}
         <div class="profile-grid my-1">

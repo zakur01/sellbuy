@@ -193,8 +193,14 @@ img {
 }
 
 .main-btn {
+  font-size: 130%;
+  transition: font-size 0.1s ease-in;
+}
+
+.main-btn:hover {
   font-size: 150%;
 }
+
 
 .btn-dark,
 .bg-dark,
@@ -333,7 +339,7 @@ button {
   z-index: 1; */
   width: 100%;
   top: 0;
-  opacity: 0.9;
+  opacity: 0.;
 }
 
 .navbar ul {
@@ -362,12 +368,13 @@ button {
   height: 100vh;
   position: relative;
   min-height: 90vh;
-  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(0,212,255,1) 100%);
+  background: black
   
 
   /* overflow: hidden; */
   
 }
+
 
 .landing-inner {
   color: #fff;
@@ -544,7 +551,7 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-
+ 
   .hide-main {
     display: none;
   }
@@ -643,6 +650,7 @@ button {
   .round-img {
     max-width: 20vw;
   }
+  
   .btn {
     margin-bottom: 5vh;
     /* padding: 0; */
@@ -657,7 +665,10 @@ button {
   font-family: inherit;
 }
 
-
+.dash-img {
+  width: 10vw;
+  border-radius: 50%;
+}
 
 .inner-img {
   width: 20vw;

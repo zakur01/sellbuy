@@ -12,7 +12,7 @@ const PostItem = ({
   profile: { profile },
   getCurrentProfile,
   auth,
-  post: { _id, text, user, avatar, image, name, comment, date },
+  post: { _id, text, user, avatar, image, name, comments, date },
   deletePost,
   showActions,
 }) => {
@@ -26,7 +26,7 @@ const PostItem = ({
     <div>
       <a href={`/profile/${user}`}>
         <img className="round-img " src={avatar} alt="" />
-        {/* <p>{profile.location}</p> */}
+        <p>{profile.contact}</p>
         <h4>{name} </h4>
       </a>
     </div>
@@ -40,7 +40,7 @@ const PostItem = ({
       {showActions && (
         <Fragment>
           <Link to={`/posts/${_id}`} className="btn btn-primary">
-            Подробнее {/* {comment.length} */}
+            Комментарии 
           </Link>
           {auth.isAuthenticated && user === auth.user._id && (<button
             onClick={(e) => deletePost(_id)}

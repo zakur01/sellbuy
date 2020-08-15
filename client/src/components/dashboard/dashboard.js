@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment, useState } from "react";
+import React, { useEffect, Fragment } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { getCurrentProfile } from "../../actions/profile";
@@ -46,7 +46,7 @@ const Dashboard = ({
   ) : (
     <Fragment>
       <h1 className="large text-primary">Профиль</h1>
-      <img className="image round-img"src={profile.avatar}></img>
+      <img className="dash-img" src={profile.avatar}></img>
       <p className="lead">
          {user && user.name}
       </p>
