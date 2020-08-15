@@ -33,8 +33,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <Router >
-        <Fragment>
           <Navbar />
+        <Fragment>
             <Alert />
             <Switch>
           <Route exact path="/" component={MainPage} />
