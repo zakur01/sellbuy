@@ -35,6 +35,9 @@ textarea {
   outline: none;
   background-color: black;
   width: 40vw;
+  color: var(--light-color);
+  font-size: 1.2rem;
+  width: 40vw;
 }
 input {
   font-family: inherit;
@@ -576,7 +579,9 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-  
+  textarea {
+    width: 60vw;
+  }
   .hide-main {
     display: none;
   }

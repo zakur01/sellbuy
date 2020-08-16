@@ -40,19 +40,20 @@ const PostForm = ({ addPost }) => {
  
   return (
     <div className="post-form">
-      <div className="bg-primary p">
-        <h3>Новое объявление: </h3>
+      <div >
+        <h3 className="text-light">Новое объявление: </h3>
       </div>
       <form
-        className="form my-1"
+        
         onSubmit={(e) => {
           e.preventDefault();
           addPost({ text, image });
           setText("");
         }}
       >
+        <div className="form__group">
         <textarea
-          className="text-area"
+          
           name="text"
           cols="30"
           rows="5"
@@ -60,8 +61,10 @@ const PostForm = ({ addPost }) => {
           onChange={(e) => setText(e.target.value)}
           required
         >
-          {" "}
+          
         </textarea>
+        <br></br>
+        <br></br>
         <input
           type="file"
           name="image"
@@ -69,8 +72,10 @@ const PostForm = ({ addPost }) => {
           onChange={uploadImage}
         />
 
-        
-        <input type="submit" className="btn btn-dark my-1" value="Отправить" />
+        <br></br>
+        <br></br>
+          <input type="submit" className="btn btn-primary my-1" value="Отправить" />
+          </div>
         
         {/* {loading ? (
           <Spinner />

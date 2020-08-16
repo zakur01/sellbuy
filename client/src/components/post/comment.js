@@ -57,7 +57,7 @@ const uploadImage = async (e) => {
           <br></br>
           <input type="file" name="image" onChange={uploadImage}></input>
           <br></br>
-           <input type="submit" className="btn btn-success my-2" value="Добавить" />
+           <input type="submit" className="btn btn-primary my-2" value="Добавить" />
         </div>
         </form>
        </div>
