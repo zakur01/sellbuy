@@ -1,6 +1,6 @@
  /* Global Styles */
 :root {
-  --primary-color: #0f4c75;
+  --primary-color: #17679c;
   --dark-color: #002040;
   --light-color: #F8F8F8;
   --danger-color: #dc3545;
@@ -17,7 +17,7 @@
 
 html {
   height: 100%;
-  background-color: #212121;
+  background-color: #030303;
 }
 
 
@@ -190,7 +190,7 @@ img {
 .bg-primary,
 .badge-primary,
 .alert-primary {
-  background: var(--primary-color);
+  background: #0a4b6b;
   color: #fff;
 }
 
@@ -381,7 +381,7 @@ button {
   
   position: relative;
   min-height: 100vh;
-  background: #212121
+  background: #030303
   
 
   /* overflow: hidden; */
@@ -395,6 +395,7 @@ button {
   width: 80%;
   /* margin: 0 auto; */
   margin-left: 8vw;
+  /* margin-top: ; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -520,10 +521,10 @@ button {
   grid-gap: 2rem;
   padding: 2vh;
   align-items: center;
-  background-color: #bbe1fa10;
+  background-color: #242425b7;
   /* border: 1px solid var(--primary-color); */
   border-radius: 10px;
-  color: #F8F8F8;
+  color: #f8f8f8ea;
   font-size: 1rem;
   margin-top: 4vh;
 }

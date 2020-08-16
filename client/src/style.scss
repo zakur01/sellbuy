@@ -1,5 +1,5 @@
 .glitch {
-    color: #33bed496;
+    color: #19aec9;
     position: relative;
     font-size: 90px;
     // margin: 70px 200px;
@@ -14,10 +14,10 @@
     content: attr(data-text);
     position: absolute;
     left: -2px;
-    text-shadow: -5px 0 #17a2b8;
-    background: #212121;
+    text-shadow: -5px 0 #125cb1bd;
+    background: #030303;
     overflow: hidden;
-    top: 0;
+    top: 3s;
     animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
   }
   
@@ -25,8 +25,8 @@
     content: attr(data-text);
     position: absolute;
     left: 2px;
-    text-shadow: -5px 0 #17a2b8;
-    background: #212121;
+    text-shadow: -5px 0 #0f4c75;
+    background: #030303;
     overflow: hidden;
     top: 0;
     animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;

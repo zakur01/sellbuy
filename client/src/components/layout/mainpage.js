@@ -21,12 +21,12 @@ const MainPage = ({ isAuthenticated }) => {
               Зарегистрироваться
             </Link>
             <Link to="login" className="btn btn-primary hide-main">
-              Войти
+              Логин
             </Link>
             <br></br>
             <br></br>
             <Link  to="/posts" className="main-btn">
-                Список объявлений
+                Перейти
               </Link>
               <br/>
               <br/>
