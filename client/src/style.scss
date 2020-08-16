@@ -4,6 +4,10 @@
     font-size: 90px;
     // margin: 70px 200px;
     animation: glitch 5s 5s infinite;
+    @media screen and (max-width: 700px) {
+      //do Smth
+      font-size: 70px;
+    }
   }
   
   .glitch::before {
@@ -11,7 +15,7 @@
     position: absolute;
     left: -2px;
     text-shadow: -5px 0 #17a2b8;
-    background: black;
+    background: #18191D;
     overflow: hidden;
     top: 0;
     animation: noise-1 3s linear infinite alternate-reverse, glitch 5s 5.05s infinite;
@@ -22,7 +26,7 @@
     position: absolute;
     left: 2px;
     text-shadow: -5px 0 #17a2b8;
-    background: black;
+    background: #18191D;
     overflow: hidden;
     top: 0;
     animation: noise-2 3s linear infinite alternate-reverse, glitch 5s 5s infinite;
@@ -64,11 +68,11 @@
     font-family: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 1px solid rgb(4, 5, 59);
+    border-bottom: 1px solid #D4D0D0;
 
     outline: 0;
     font-size: 1.3rem;
-    color: rgb(7, 53, 53);
+    color: #D4D0D0;
     padding: 7px 0;
     background: transparent;
     transition: font-weight 0.1s;
@@ -80,7 +84,7 @@
     &:placeholder-shown ~ .form__label {
       font-size: 1.3rem;
       cursor: text;
-      top: 20px;
+      top: 10px;
     }
   }
   
@@ -90,7 +94,7 @@
     display: block;
     transition: 0.2s;
     font-size: 1rem;
-    color: rgb(0, 0, 0);
+    color: #D4D0D0;
   }
   
   .form__field:focus {
@@ -100,11 +104,11 @@
       display: block;
       transition: 0.3s;
       font-size: 1rem;
-      color: rgb(3, 3, 3);
+      color: #D4D0D0;
       font-weight:500;    
     }
     padding-bottom: 6px;  
-    font-weight: 700;
+    // font-weight: 700;
     border-width: 2px;
     border-image-slice: 1;
   }

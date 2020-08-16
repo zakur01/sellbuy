@@ -18,10 +18,10 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
     <Spinner />
   ) : (
     <Fragment>
-      <h1 className="large text-primary">Объявления</h1>
-      <p className="lead">
+      {/* <h1 className="large text-primary">Объявления</h1> */}
+      {/* <p className="lead">
         <i className="fas fas-user"></i>
-      </p>
+      </p> */}
       <Link to="/newpost" className="btn btn-success my-2 btn:hover">Создать объявление</Link>
       {/* <PostForm /> */}
         <div className='posts'>
