@@ -41,9 +41,11 @@ const App = () => {
             <Alert />
             <Switch>
           <Route exact path="/" component={MainPage} />
-          <section className="container">
+            <section className="container">
+              <section className="container_2">
               <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
+                <Route exact path="/login" component={Login} />
+                </section>
               <Route exact path="/profiles" component={Profiles} />
               <Route exact path="/profile/:id" component={Profile} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
