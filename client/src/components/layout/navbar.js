@@ -1,10 +1,12 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { logout } from '../../actions/auth'
+import { logout } from '../../actions/auth';
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated, loading }, logout, noshow }) => {
+ 
+  
   const authLinks = (
     <ul>
      <li>
@@ -41,6 +43,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
         </ul>
   );
 
+
     return (
       <nav className="navbar bg-dark">
         {/* <h1> */}
@@ -56,7 +59,9 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
 Navbar.propTypes = {
   logout: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  noshow: PropTypes.bool.isRequired,
+  location: PropTypes.object.isRequired,
 }
 
 const mapStateToProps = state => ({

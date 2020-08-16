@@ -22,14 +22,17 @@ const PostItem = ({
   // }, []);
 
 
-  return (<div className="post bg-white p-1 my-1">
+  return (
+    <div className="post bg-white p-1 my-1">
     <div>
       <a href={`/profile/${user}`}>
         <img className="round-img " src={avatar} alt="" />
         <p>{profile.contact}</p>
-        <h4>{name} </h4>
+        <h4 >{name} </h4>
+        
       </a>
     </div>
+    
     <container>
       <p className="my-1">{text}</p>
       <img className="inner-img"  src={image} />

@@ -91,7 +91,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             required
             autoComplete="on"
           />
-          <label className="form__label">Пароль</label>
+          <label className="form__label">Подтвердите пароль</label>
         </div>
         <input
           type="submit"
