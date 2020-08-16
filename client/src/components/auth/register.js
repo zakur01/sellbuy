@@ -44,13 +44,13 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             type="text"
             name="name"
             id="name"
-            placeholder="Имя пользователя"
+            placeholder="Юзернейм"
             onChange={(e) => onChange(e)}
             value={name}
             required
             autoComplete="on"
           />
-          <label className="form__label">Имя пользователя</label>
+          <label className="form__label">Юзернейм</label>
         </div>
         <div className="form__group">
           <input
@@ -91,7 +91,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             required
             autoComplete="on"
           />
-          <label className="form__label">Повторите пароль</label>
+          <label className="form__label">Пароль</label>
         </div>
         <input
           type="submit"
