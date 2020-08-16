@@ -32,31 +32,34 @@ const uploadImage = async (e) => {
 };
   return (
     <div className="post-form">
-         <div className="bg-primary p">
-           <h3>Оставьте комментарий </h3>
-         </div>
+        
          <form
-           className="form my-1"
+           
            onSubmit={(e) => {
              e.preventDefault();
              addComment(postId, { text, image });
              setText("");
            }}
-         >
-           <textarea
+           >
+           <div className="form__group">
+          <textarea
+            
              name="text"
              cols="30"
              rows="5"
-             placeholder="Текст комментария"
+             placeholder="Добавьте комментарий..."
              value={text}
              onChange={(e) => setText(e.target.value)}
              required
            >
              {" "}
-           </textarea>
-           <input type="file" name="image"  onChange={uploadImage}></input>
-           <input type="submit" className="btn btn-dark my-1" value="Отправить" />
-         </form>
+          </textarea>
+          <br></br>
+          <input type="file" name="image" onChange={uploadImage}></input>
+          <br></br>
+           <input type="submit" className="btn btn-success my-2" value="Добавить" />
+        </div>
+        </form>
        </div>
   );
 };

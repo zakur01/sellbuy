@@ -28,7 +28,11 @@ body {
   font-family: "Jost", sans-serif;
   
 }
-
+textarea {
+  outline: none;
+  background-color: black;
+  width: 40vw;
+}
 input {
   font-family: inherit;
 }
@@ -49,7 +53,7 @@ img {
 /* Utilities */
 .container {
   max-width: 1100px;
-  margin-left: 14vw;
+  margin-left: 15vw;
   margin-top: 8vh;
   overflow: hidden;
   padding: 0 2rem;
@@ -58,7 +62,7 @@ img {
 }
 
 .container_2 {
-  margin-left: 20vw;
+  margin-left: 15vw;
   margin-top: 5vh
 
 
@@ -573,11 +577,7 @@ button {
   .hide-main {
     display: none;
   }
-  .container {
-    padding-top: 1vh;
-    margin-left: 1vw;
-   
-  }
+ 
   .inner-img {
     width: 20vw
   }
@@ -665,7 +665,8 @@ button {
   }
 
   .inner-img {
-    min-width: 60vw;
+    min-width: 50vw;
+    opacity: 0.9;
     /* border: 4px solid; */
 
 
@@ -680,25 +681,28 @@ button {
     margin-bottom: 5vh;
     /* padding: 0; */
   }
+  
   .container {
-    margin-top: 5vh;
-    padding-right: 3vw;
-    padding-left: 3vw;
-    text-align: center;
-    
-  }
-  /* .container h1{
-    margin-left: 22%;
+    max-width: 100vw;
+    margin-top: 6vh;
+    margin-left: 0;
+    overflow: hidden;
+    /* padding: 0 2rem; */
+    /* margin-top: 6rem; */
+    /* margin-bottom: 3rem; */
   }
 
   .container .btn-success {
-    margin-left: 22vw;
+    margin-left: 12.5vw;
   } */
 .form-group{
   margin-left: 20vw;
 }
 .landing{
   margin-left: 6vw
+}
+.container_2 {
+  margin-left: 13.5vw;
 }
   
 }

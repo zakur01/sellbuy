@@ -16,7 +16,7 @@ const Post = ({ auth, getPost, post: { post, loading },  match }) => {
 
     return loading || post === null ? (<Spinner />) : 
         <Fragment>
-    <Link to='/posts' className="btn">
+    <Link to='/posts' className="btn btn-success my-2">
         Обратно
     </Link>
             <PostItem post={post} showActions={false} />
@@ -24,7 +24,8 @@ const Post = ({ auth, getPost, post: { post, loading },  match }) => {
                 {post.user.name}
             </div>
         <div className="comments">
-            <h1>Комментарии: </h1>
+                <h1>Комментарии: </h1>
+                <br></br>
         {post.comments.reverse().map((comment) => (
             <CommentItem key={comment._id} comment={comment} postId={post._id}/>
             ))}
