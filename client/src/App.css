@@ -290,21 +290,21 @@ img {
     border: 1px white solid
   } */
   
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="date"],
-.form select,
-.form textarea {  
-  display: flex ;
-  /* color: white; */
-  /* background-color: black; */
-  width: 100%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  background-color: black;
-}
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 0px solid green;
+    font-family: "Raleway", sans-serif;
+    font-size: inherit;
+    -webkit-text-fill-color:var(--light-color);
+    transition: background-color 5000s ease-in-out 0s;
+  }
 
 .form input[type="submit"],
 button {
@@ -507,14 +507,14 @@ button {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
-  padding: 1vh;
+  padding: 2vh;
   align-items: center;
   background-color: #18191D;
   border: 1px solid var(--primary-color);
   border-radius: 10px;
   color: #F8F8F8;
   font-size: 1rem;
-  margin-top: 5vh;
+  margin-top: 4vh;
 }
 
 .post-comment {
@@ -665,8 +665,8 @@ button {
   }
   .container {
     margin-top: 5vh;
-    padding-right: 2vw;
-    padding-left: 2vw;
+    padding-right: 3vw;
+    padding-left: 3vw;
     text-align: center;
     
   }
