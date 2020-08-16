@@ -30,26 +30,30 @@ const Login = ({ login, isAuthenticated }) => {
     <Fragment>
       {/* <div className="dark-overlay"> */}
       <h1 className="large text-primary">Войти</h1>
-      <p className="lead">
-        <i className="fas fa-user"></i> Введите данные для входа
-      </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
-          <input
+      
+      <form onSubmit={(e) => onSubmit(e)}>
+        <div className="form__group"> 
+        <input
+            className="form__field"
             type="email"
-            placeholder="Адрес электронной почты"
             name="email"
+            id="email"
+            placeholder="Почта"
             required
             onChange={onChange}
           />
+          <label className="form__label">Почта</label>
         </div>
-        <div className="form-group">
-          <input
-            type="password"
+        <div className="form__group">
+        <input
+            className="form__field"
+          type="password"
+            id="password"
             placeholder="Пароль"
             onChange={onChange}
             name="password"
           />
+          <label for="password" className="form__label">Пароль</label>
         </div>
         <input type="submit" className="btn btn-primary" value="Войти" />
       </form>

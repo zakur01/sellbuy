@@ -37,20 +37,24 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       <p className="lead">
         <i className="fas fa-user"></i>
       </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
+      <form  onSubmit={(e) => onSubmit(e)}>
+        <div className="form__group">
           <input
+            className="form__field"
             type="text"
             name="name"
+            id="name"
             placeholder="Имя пользователя"
             onChange={(e) => onChange(e)}
             value={name}
             required
             autoComplete="on"
           />
+          <label className="form__label">Имя пользователя</label>
         </div>
-        <div className="form-group">
+        <div className="form__group">
           <input
+            className="form__field"
             type="email"
             name="email"
             placeholder="Почта"
@@ -59,9 +63,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             required
             autoComplete="on"
           />
+          <label className="form__label">Почта</label>
         </div>
-        <div className="form-group">
+        <div className="form__group">
           <input
+            className="form__field"
             type="password"
             name="password"
             placeholder="Пароль"
@@ -71,9 +77,11 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             required
             autoComplete="on"
           />
+        <label className="form__label">Пароль</label>
         </div>
-        <div className="form-group">
+        <div className="form__group">
           <input
+            className="form__field"
             type="password"
             name="password2"
             placeholder="Повторите пароль"
@@ -83,6 +91,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             required
             autoComplete="on"
           />
+          <label className="form__label">Повторите пароль</label>
         </div>
         <input
           type="submit"
