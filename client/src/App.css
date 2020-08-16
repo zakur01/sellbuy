@@ -17,7 +17,7 @@
 
 html {
   height: 100%;
-  background-color: #181818;
+  background-color: black;
 }
 
 
@@ -207,7 +207,7 @@ img {
 .bg-dark,
 .badge-dark,
 .alert-dark {
-  background: var(--dark-color);
+  background: black;
   color: #fff;
 }
 
@@ -371,7 +371,7 @@ button {
   margin: 0;
   position: relative;
   min-height: 90vh;
-  background: #18191D
+  background: black
   
 
   /* overflow: hidden; */
@@ -507,7 +507,7 @@ button {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-gap: 2rem;
-  padding: 4vh;
+  padding: 1vh;
   align-items: center;
   background-color: #18191D;
   border: 1px solid var(--primary-color);
@@ -665,8 +665,8 @@ button {
   }
   .container {
     margin-top: 5vh;
-    padding-right: 1vw;
-    padding-left: 1vw;
+    padding-right: 2vw;
+    padding-left: 2vw;
     text-align: center;
     
   }
