@@ -44,10 +44,12 @@ const Dashboard = ({
   return loading && profile === null ? (
     <Spinner />
   ) : (
-    <Fragment>
-      <h1 className="large text-primary">Профиль</h1>
-      <img className="dash-img" src={profile.avatar}></img>
-      <p className="lead">
+      <Fragment>
+        <div className="profile-btn">
+      <h1 className="large text-light">Профиль</h1>
+          <img className="dash-img" src={profile.avatar}></img>
+          <br></br>
+      <p className="lead text-light">
          {user && user.name}
       </p>
       {profile !== null ? (
@@ -63,7 +65,8 @@ const Dashboard = ({
             Добавить
           </Link>
         </Fragment>)
-      }
+          }
+          </div>
     </Fragment>
   );
 };

@@ -2,10 +2,13 @@
 :root {
   --primary-color: #17679c;
   --dark-color: #002040;
-  --light-color: #F8F8F8;
+  --light-color: #D4D0D0;
   --danger-color: #dc3545;
   --success-color: #3282b8;
   --font: "Raleway", sans-serif;
+}
+.text-light {
+  color: var(--light-color)
 }
 
 * {
@@ -704,7 +707,10 @@ button {
 .container_2 {
   margin-left: 13.5vw;
 }
-  
+.dash-img{
+  min-width: 30vw;
+}
+
 }
 
 .text-area {
@@ -720,6 +726,12 @@ button {
 .inner-img {
   max-width: 400px;
 
+}
+.profile-btn {
+  margin-left: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
 }
 
 

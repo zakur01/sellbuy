@@ -3,9 +3,9 @@ import {  Link } from 'react-router-dom'
 
 const DashboardActions = () => {
   return (
-    <div className="dash-buttons">
-      <Link to="/edit-profile" className="btn btn-light">
-        <i className="fas fa-user-circle text-primary" /> Настройки
+    <div className="profile-margin">
+      <Link to="/edit-profile" className="btn btn-primary my-1">
+        Настройки
       </Link>
     </div>
   );

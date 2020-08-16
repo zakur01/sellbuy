@@ -64,9 +64,9 @@ const EditProfile = ({
   };
   return (
     <Fragment>
-      <h1 className="large text-primary">Редактировать профиль</h1>{' '}
+      <h1 className="large text-light">Редактировать профиль</h1>{' '}
       <img width="200px" height="200px" src={profile.avatar}></img>
-      <h2>Сменить аватар</h2>
+      <h2 className="text-light">Сменить аватар</h2>
       {/* <img width="300px" height="300px" src={image}></img> */}
       <form className="form" onSubmit={(e) => onSubmit(e)}>
         <input
@@ -75,25 +75,29 @@ const EditProfile = ({
           placeholder="Добавить изображение"
           onChange={uploadImage}
         />
-        <div className="form-group">
-          Месторасположение:
+        <div className="form__group">
+          
           <input
+            className="form__field"
             type="text"
             placeholder="Город"
             name="location"
             value={location}
             onChange={(e) => onChange(e)}
           />
+          <label className="form__label">Город</label>
         </div>
-        <div className="form-group">
-          Контактные данные:
+        <div className="form__group">
+          
           <input
+            className="form__field"
             type="text"
-            placeholder="Контактные данные"
+            placeholder="Контакты"
             name="contacts"
             value={contacts}
             onChange={(e) => onChange(e)}
           />
+          <label className="form__label">Контакты</label>
         </div>
         <input
           type="submit"
