@@ -84,7 +84,7 @@
     &:placeholder-shown ~ .form__label {
       font-size: 1.3rem;
       cursor: text;
-      top: 10px;
+      top: 1px;
     }
   }
   
@@ -122,5 +122,9 @@
     margin-top: 10px;
     margin-bottom: 20px;
     width: 50%;
+    @media screen and (max-width: 700px) {
+      //do Smth
+      margin-left: 22vw;
+    }
   }
   
