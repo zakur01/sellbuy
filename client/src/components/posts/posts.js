@@ -1,17 +1,16 @@
-import React, { Fragment, useEffect } from "react";
-import { Link } from 'react-router-dom'
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import { getPosts } from "../../actions/post";
-import Spinner from "../layout/spinner";
-import PostItem from './postItem'
-import PostForm from './postForm'
-import { getCurrentProfile } from "../../actions/profile";
+import React, { Fragment, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getPosts } from '../../actions/post';
+import Spinner from '../layout/spinner';
+import PostItem from './postItem';
+import PostForm from './postForm';
+import { getCurrentProfile } from '../../actions/profile';
 
 const Posts = ({ getPosts, post: { posts, loading } }) => {
   useEffect(() => {
     getPosts();
-    
   });
 
   return loading ? (
@@ -22,15 +21,14 @@ const Posts = ({ getPosts, post: { posts, loading } }) => {
       {/* <p className="lead">
         <i className="fas fas-user"></i>
       </p> */}
-      <Link to="/newpost" className="btn btn-success my-2 btn:hover">Создать объявление</Link>
+      <Link to="/newpost" className="btn btn-success my-2 btn:hover">
+        Создать объявление
+      </Link>
       {/* <PostForm /> */}
-        <div className='posts'>
-        {posts.map(post => (
-            <PostItem key={post._id} post={post} />
+      <div className="posts">
+        {posts.map((post) => (
+          <PostItem key={post._id} post={post} />
         ))}
-            
-            
-                  
       </div>
     </Fragment>
   );

@@ -1,3 +1,24 @@
 {
-    "workbench.colorTheme": "GitHub Dark"
+  "workbench.colorTheme": "Material",
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#1e7e69",
+    "activityBar.activeBorder": "#d598e6",
+    "activityBar.background": "#1e7e69",
+    "activityBar.foreground": "#e7e7e7",
+    "activityBar.inactiveForeground": "#e7e7e799",
+    "activityBarBadge.background": "#d598e6",
+    "activityBarBadge.foreground": "#15202b",
+    "sash.hoverBorder": "#1e7e69",
+    "statusBar.background": "#145547",
+    "statusBar.foreground": "#e7e7e7",
+    "statusBarItem.hoverBackground": "#1e7e69",
+    "statusBarItem.remoteBackground": "#145547",
+    "statusBarItem.remoteForeground": "#e7e7e7",
+    "titleBar.activeBackground": "#145547",
+    "titleBar.activeForeground": "#e7e7e7",
+    "titleBar.inactiveBackground": "#14554799",
+    "titleBar.inactiveForeground": "#e7e7e799",
+    "commandCenter.border": "#e7e7e799"
+  },
+  "peacock.color": "#145547"
 }
